@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1">
+  <meta name="description" content="Natural Language Inferencing classification using XLM-RoBERTa">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="/static/css/animate.min.css">
+  <link rel="shortcut icon" type="image/png" href="/static/logo.png">
+  <title>XLM-RoBERTa</title>
+</head>
+
+<body>
+
+  <form action="{{url_for('submit')}}" method="POST">
+    <div class="animated fadeIn main">
+      <br>
+
+      <!-- Testimonials -->
+	{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Natural Language Inferencing classification using XLM-RoBERTa</h1>
+
+    <center>
+        <div class="form">
+        <form action="/predict" method="POST">
+            <input type="text" name="sentence_1"  placeholder="Write 1st sentence ?">
+            <input type="text" name="sentence_2"  placeholder="Write 2nd sentence ?">
+            <input type="submit" value="Submit">
+        </form>
+            {% if data:%}
+            <div class="result animated fadeln">Answer : {{data}}</div>
+            {% endif %}
+	</div>
+    </center>
+
+</div>
+{% endblock %}
+
+
+    </div>
+  </form>
+
+  <br>
+  <br>
+
+  <hr>
+  <footer>
+
+    <div>Made with <span class="heart">&hearts;&#xFE0E;</span> by INEURON </div>
+
+    <br>
+    <br>
+
+  </footer>
+
+</body>
+
+</html>
